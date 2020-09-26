@@ -20,7 +20,7 @@ def isSorted(A: Iterable[int], lo: int, hi: int) -> bool:
     return True
 
 
-#Linear Search
+# Linear Search
 # O(n)
 def linearSearch(x: int, A: Iterable[int], n: int) -> int:
     """
@@ -43,8 +43,8 @@ def linearSearch(x: int, A: Iterable[int], n: int) -> int:
 # A = [0,2,5,6,12]
 # print(linearSearch(5,A,len(A)))
 
-#Binary Search
-#O(log(n))
+# Binary Search
+# O(log(n))
 def binSearch(x:int, A:Iterable[int], n:int) -> int:
     """
     Implementation of Binary Search
