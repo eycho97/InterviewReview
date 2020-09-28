@@ -1,15 +1,18 @@
 from typing import Iterable
-import Node
+from Node import Node
     
 class Stack:
+    """
+    Stack Interface
+    """
 
     @staticmethod
-    def isStack(self, S: 'Node') -> bool:
+    def isStack(S: 'Node') -> bool:
         return NotImplementedError
 
     def stackEmpty(self) -> bool:
         """
-        requires S != None
+        requires self != None
         """
         raise NotImplementedError
 
@@ -43,15 +46,15 @@ class Stack:
 
 class StackL(Stack):
     """
-    Stack Class implemented with a linked list of nodes
+    Stack implemented with a linked list
     """
-    def __init__(self, top: 'Node'=None, floor: 'Node'=None):
+    def __init__(self, top: 'Node'=None):
         self.top = top
-        self.floor = floor
+        self.floor = top
     
     # O(n)
     @staticmethod
-    def isStack(self, S: 'Node') -> bool:
+    def isStack(S: 'Node') -> bool:
         return S.top != None and S.floor != None and Node.isSegmentSlit(S.top, S.floor)
 
     # O(1)
@@ -113,10 +116,11 @@ class StackL(Stack):
         requires Stack.isStack(self)
         """
         original = self.top
-        print("TOP: ")
+        print("TOP: ", end =" ")
         while (self.top != None):
-            print(self.top.getData())
-            if (self.top.getNext() != None): print(" | ")
+            print(self.top.getData(), end =" ")
+            if (self.top.getNext() != None): print(" | ", end =" ")
             self.top = self.top.getNext()
         self.top = original
+        print()
 

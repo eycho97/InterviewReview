@@ -1,7 +1,7 @@
 from typing import Iterable
 
 class Node:
-    def __init__(self, data: str, next: 'Node'=None):
+    def __init__(self, data: str=None, next: 'Node'=None):
         self.data = data
         self.next = next
     
